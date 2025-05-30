@@ -8,7 +8,7 @@ passport.use(
       {
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: "https://task-kero.onrender.com/auth/google/callback",
+        callbackURL: process.env.CALLBACK_URL,
         scope: ["profile", "email"],
       },
       async (accessToken, refreshToken, profile, done) => {
