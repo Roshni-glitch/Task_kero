@@ -1,0 +1,203 @@
+/* General Styles */
+body {
+    height: 100vh;
+    overflow: hidden; /* Hides the scrollbar */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Main Content Layout */
+.main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Space for fixed navbar */
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.main-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Username Section */
+.username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #350F43;
+}
+
+/* Task Cards Section */
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 cards per row */
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/* Task Cards */
+.task-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-align: center; /* Center aligns content inside card */
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Task Title */
+.task-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #350F43;
+}
+
+/* Task Description */
+.task-desc {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.task-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #350F43; /* Matching theme color */
+    text-align: center; /* Center text inside the card */
+    background-color: #F3F3F3; /* Light background for visibility */
+    padding: 8px 12px; /* Padding for better spacing */
+    border-radius: 5px; /* Slight rounding for a soft UI look */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures date is centered */
+    justify-content: center;
+    gap: 5px;
+    margin: 10px 0; /* Adds spacing around the date */
+}
+
+/* Making sure the paragraph inside is well-styled */
+.task-date p {
+    margin: 0; /* Removes default margins */
+    font-size: 13px;
+    color: #350F43; /* Black color for better readability */
+}
+
+/* Centering Priority */
+.task-priority {
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Ensures it wraps properly */
+    margin-bottom: 10px; /* Space before button */
+}
+
+/* Color-coded priorities */
+.high {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.medium {
+    background-color: #F39C12;
+    color: white;
+}
+
+.low {
+    background-color: #27AE60;
+    color: white;
+}
+
+/* Show Button */
+
+.btn-container {
+    display: flex;
+    justify-content: space-evenly; /* Distributes buttons equally */
+    align-items: center;
+    width: 100%; /* Ensures full row usage */
+    gap: 10px; /* Adds some spacing */
+}
+
+.btn-container form {
+    flex: 1; /* Makes all buttons take equal width */
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100%; /* Ensures buttons expand within their form */
+    max-width: 120px; /* Limits button width */
+    text-align: center;
+}
+
+.show-btn {
+    background-color: #350F43;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.edit-btn {
+    background-color: #edc001;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.delete-btn {
+    background-color: #D0312D;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.show-btn:hover {
+    background-color: #5A1D68;
+}
+
+.edit-btn:hover {
+    background-color: #ebdb51;
+}
+
+.delete-btn:hover {
+    background-color: #da7f7f;
+}
+
+
+/* Responsive: Adjusts for smaller screens */
+@media (max-width: 992px) {
+    .task-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .task-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+    }
+}
+
+

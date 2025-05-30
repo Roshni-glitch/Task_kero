@@ -1,0 +1,48 @@
+<% layout("./layouts/layout.ejs") %>
+<%- include("./includes/navbar.ejs") %>
+
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/navbar.css">
+
+<body>
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Username Section -->
+        <div class="username" style="margin-top: 50px; margin-bottom: 20px;">
+            <b><h2>Welcome, <%= user.name || "Guest" %></h2></b>
+        </div>
+
+        <!-- Task Cards Container -->
+        <div class="task-container">
+            <% tasks.forEach(task => { %>
+                <div class="task-card">
+                    <h3 class="task-title"><%= task.title %></h3>
+                    <p class="task-desc"><%= task.description %></p>
+                    <div class="task-info">
+                      <div class="task-date">
+                        <p><strong>DUE DATE:</strong> <%= task.dueDate ? task.dueDate.toDateString() : 'No due date' %></p>
+                      </div>
+                      <span class="task-priority <%= task.priority.toLowerCase() %>">
+                            🔥 <%= task.priority %>
+                        </span>
+                    </div>
+                    <div class="btn-container">
+                        <form action="/tasks/<%= task._id %>">
+                            <button class="show-btn">Show</button>
+                        </form>
+                        <form action="/tasks/<%= task._id %>/edit">
+                            <button class="edit-btn">Edit</button>
+                        </form>
+                        <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
+                            <button class="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+</body>
+</html>

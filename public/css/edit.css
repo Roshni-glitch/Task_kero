@@ -1,0 +1,84 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: lavender;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Adjust the form container */
+.form-container {
+    background-color: #350F43;
+    color: white;
+    width: 500px;  /* Increased Width */
+    margin: 200px auto 50px;  /* Push Down to Avoid Overlap */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Align Labels and Inputs in Same Line */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Label Styling */
+.form-group label {
+    font-weight: bold;
+    color: #fff;
+    width: 30%;  /* Keep labels in a fixed-width column */
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #350F43;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* 🔹 Update Task Button */
+button {
+    background-color: white;
+    color: #350F43;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #edc001;
+}
+
+/* 🔹 Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 95%;
+        margin-top: 120px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+    }
+}

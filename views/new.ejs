@@ -1,0 +1,42 @@
+    <%layout("./layouts/layout.ejs")%>
+    <%- include("./includes/navbar.ejs") %>
+
+    <link rel="stylesheet" href="/css/new.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+
+    <body>
+        <h1 style="margin-top: 120px;">Add a New Task</h1>
+        <form action="/tasks" method="POST">
+            <label for="title">Task Title:</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            <br>
+            <br>
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <br>
+            <br>
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <br>
+            <br>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+            <br>
+            <br>
+            <button type="submit">Add Task</button>
+        </form>
+    </body>
+    </html>

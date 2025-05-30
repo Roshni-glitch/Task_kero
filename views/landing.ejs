@@ -1,0 +1,28 @@
+<%layout("./layouts/layout.ejs")%>
+<body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+    <div class="blob blob6"></div>
+   <div class="blob blob7"></div>
+    <div class="blob blob8"></div>
+    <div class="blob blob9"></div>
+    <div class="blob blob10"></div>
+    <div class="container">
+        <h1>Welcome to Task-Kero</h1>
+        <p>Boost your productivity with ease!</p>
+        <% if (!user) { %>
+            <a href="/auth/google" class="btn btn-custom btn-lg">
+                <i class="fab fa-google"></i> Login with Google
+            </a>
+        <% } else { %>
+            <a href="/tasks" class="btn btn-custom btn-lg">
+                <i class="fas fa-tasks"></i> Go to Dashboard
+            </a>
+        <% } %>
+    </div>
+    
+</body>
+</html>
