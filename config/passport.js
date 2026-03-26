@@ -9,7 +9,7 @@ passport.use(
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
         //callbackURL: "https://task-kero.onrender.com/auth/google/callback",
-        callbackURL: "http://localhost:3000/auth/google/callback",
+        callbackURL: "https://task-kero-f8ji.onrender.com/auth/google/callback",
         scope: ["profile", "email"],
       },
       async (accessToken, refreshToken, profile, done) => {
